@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "832959147559",
+    "project_id": "firstchat2-73ace",
+    "storage_bucket": "firstchat2-73ace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832959147559:android:951ea5e8b687280354e802",
+        "android_client_info": {
+          "package_name": "com.example.firstchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832959147559-mhu8hdd14hqkm76soidqg2k6q650f95q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firstchat",
+            "certificate_hash": "14c6cb46ea0ee6f450e93e667b06275f054161c0"
+          }
+        },
+        {
+          "client_id": "832959147559-vb1u7fgo8nh8orhl75c455vg2bkrml2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnU8aMREPnKy7uDshXjIWTR38J5J8bJwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832959147559-vb1u7fgo8nh8orhl75c455vg2bkrml2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
