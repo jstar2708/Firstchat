@@ -31,18 +31,6 @@ class ChatsFragment : Fragment() {
         _binding = FragmentChatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.button.setOnClickListener {
-            val auth = FirebaseAuth.getInstance()
-            auth.signOut()
-            val intent = Intent(requireContext(), SignInActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 
