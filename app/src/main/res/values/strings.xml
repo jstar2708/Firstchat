@@ -39,4 +39,7 @@
     <string name="hello_there_nwelcome">Hello There!\nWelcome</string>
     <string name="already_hava_an_account">Already hava an account?</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="chat">Chat</string>
+    <string name="story">Story</string>
+    <string name="profile">Profile</string>
 </resources>

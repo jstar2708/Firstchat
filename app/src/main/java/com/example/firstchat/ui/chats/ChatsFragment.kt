@@ -1,4 +1,4 @@
-package com.example.firstchat.ui.home
+package com.example.firstchat.ui.chats
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,13 +9,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.firstchat.auth.SignInActivity
-import com.example.firstchat.auth.SignUpActivity
-import com.example.firstchat.databinding.FragmentHomeBinding
+import com.example.firstchat.databinding.FragmentChatsBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class HomeFragment : Fragment() {
+class ChatsFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentChatsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,9 +26,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this).get(ChatsViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentChatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.button.setOnClickListener {

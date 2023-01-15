@@ -19,6 +19,7 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var viewModel: SignInViewModel
+    private lateinit var progressDialogs: ProgressDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
@@ -28,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SignInViewModel::class.java]
 
-        val progressDialogs = ProgressDialog(this, R.style.MyAlertDialogStyle)
+        progressDialogs = ProgressDialog(this, R.style.MyAlertDialogStyle)
         progressDialogs.setTitle("Signing you in")
         progressDialogs.setMessage("Please wait while we sign you in")
 
@@ -36,10 +37,13 @@ class SignInActivity : AppCompatActivity() {
             if(it == 1){
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out)
+                progressDialogs.dismiss()
                 finish()
             }
             else if(it == 2){
                 Snackbar.make(binding.root, "Error while signing you in", Snackbar.LENGTH_SHORT).show()
+                progressDialogs.dismiss()
             }
         })
 
@@ -52,6 +56,7 @@ class SignInActivity : AppCompatActivity() {
         binding.siClickForSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out)
             finish()
         }
 
@@ -64,7 +69,6 @@ class SignInActivity : AppCompatActivity() {
                 progressDialogs.show()
                 Handler().postDelayed({
                     viewModel.signIn(binding.siEmailEditText.text.toString(), binding.siPasswordEditText.text.toString())
-                    progressDialogs.dismiss()
                 }, 2000)
             }
         }
